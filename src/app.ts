@@ -4,6 +4,8 @@ import morgan from "morgan";
 import helmet from "helmet";
 import compression from "compression";
 import path from "path";
+import swaggerUi from 'swagger-ui-express';
+import { swaggerDocument } from './swagger';
 
 // Import routes
 import userRoute from "./routes/userRoute";
@@ -33,11 +35,15 @@ const app: Application = express();
 
 // Middleware
 app.use(cors());
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false
+}));
 app.use(compression());
 app.use(morgan("dev"));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 // Serve static files
 app.use("/uploads", express.static(path.join(__dirname, "../uploads")));

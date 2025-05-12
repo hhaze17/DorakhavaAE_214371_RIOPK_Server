@@ -12,7 +12,7 @@
     "init-admin": "ts-node src/init-admin.ts",
     "fix-db": "ts-node src/fix-database.ts",
     "fix-auth": "node src/fix-auth.js",
-    "init-db": "ts-node src/init-db.ts",
+    "init-db": "ts-node src/scripts/full-init-db.ts",
     "init-db-2": "ts-node src/scripts/initZoneProducts.ts"
   },
   "keywords": [],
@@ -32,7 +32,8 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
-    "nodemailer": "^7.0.3"
+    "nodemailer": "^7.0.3",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
@@ -45,6 +46,7 @@
     "@types/jsonwebtoken": "^9.0.1",
     "@types/morgan": "^1.9.4",
     "@types/node": "^18.15.11",
+    "@types/swagger-ui-express": "^4.1.8",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "eslint": "^8.37.0",

@@ -2,6 +2,7 @@ import { Document, Model } from 'mongoose';
 import { Request } from 'express';
 import mongoose from 'mongoose';
 
+
 export interface UserInterface extends Document {
   username: string;
   password?: string;
