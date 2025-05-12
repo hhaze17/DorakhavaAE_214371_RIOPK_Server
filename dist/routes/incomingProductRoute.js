@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const incomingProductController_1 = require("../controllers/incomingProductController");
+const router = (0, express_1.Router)();
+router.get("/getAllIncomingProducts", incomingProductController_1.getAllIncomingProductsController);
+router.post("/createIncomingProduct", incomingProductController_1.createIncomingProductController);
+router.get("/getIncomingProduct/:id", incomingProductController_1.getIncomingProductByIdController);
+router.put("/updateIncomingProduct/:id", incomingProductController_1.updateIncomingProductController);
+router.delete("/deleteIncomingProduct/:id", incomingProductController_1.deleteIncomingProductController);
+router.post("/receivedIncomingProduct/:id", incomingProductController_1.receivedIncomingProductController);
+exports.default = router;
